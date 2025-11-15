@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - "**"
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
@@ -53,6 +56,7 @@ jobs:
         with:
           registry-type: public
       - name: push image to ecr
+        if: github.ref == 'refs/heads/main'
         run: |
           PUBLIC_REGISTRY="public.ecr.aws/${{ secrets.ECR_ALIAS }}"
           IMAGE_NAME="ecr-image"
