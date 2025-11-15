@@ -16,13 +16,13 @@ jobs:
         with:
           projectBaseDir: ./src
         env:
-          sonar_host_url: ${{ secrets.SONAR_HOST_URL }}
-          sonar_token: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       - name: sonar quality gates
         uses: sonarsource/sonarqube-quality-gate-action@v1
         env:
-          sonar_host_url: ${{ secrets.SONAR_HOST_URL }}
-          sonar_token: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       - name: setup docker
         uses: docker/login-action@v2
         with:
