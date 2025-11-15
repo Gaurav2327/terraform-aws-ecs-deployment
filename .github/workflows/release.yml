@@ -52,6 +52,10 @@ jobs:
         uses: aws-actions/amazon-ecr-login@v2
         with:
           registry-type: public
+        env:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-2
       - name: push image to ecr
         run: |
           PUBLIC_REGISTRY="public.ecr.aws/${{ secrets.ECR_ALIAS }}"
