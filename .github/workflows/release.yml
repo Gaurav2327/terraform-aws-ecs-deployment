@@ -18,8 +18,6 @@ jobs:
           args: >
             -Dsonar.projectKey=Gaurav2327_terraform-aws-ecs-deployment
             -Dsonar.projectName=terraform-aws-ecs-deployment
-            -Dsonar.organization=gaurav2327
-            -Dsonar.sources=src
         env:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
