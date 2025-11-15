@@ -3,9 +3,6 @@ on:
   push:
     branches:
       - "**"
-  pull_request:
-    branches:
-      - "**"
   workflow_dispatch:
 
 jobs:
@@ -22,7 +19,7 @@ jobs:
           sonar_host_url: ${{ secrets.SONAR_HOST_URL }}
           sonar_token: ${{ secrets.SONAR_TOKEN }}
       - name: sonar quality gates
-        uses: onarsource/sonarqube-quality-gate-action@v1
+        uses: sonarsource/sonarqube-quality-gate-action@v1
         env:
           sonar_host_url: ${{ secrets.SONAR_HOST_URL }}
           sonar_token: ${{ secrets.SONAR_TOKEN }}
